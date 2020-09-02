@@ -1,8 +1,8 @@
 # ADAMOS HUB Single Sign-On (SSO) with Angular
 
-This sample app demonstrates how to log in and out using the ADAMOS HUB IAM Server. It uses the [angular-oauth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc) library to handle the Authorization Code flow with PKCE newly defined with [OAuth 2.1](https://oauth.net/2.1/).
+This sample app demonstrates how to log in and out using the ADAMOS HUB IAM Server. It uses the [angular-oauth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc){:target="_blank"} library to handle the Authorization Code flow with PKCE newly defined with [OAuth 2.1](https://oauth.net/2.1/){:target="_blank"}.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli){:target="_blank"} version 9.0.4.
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ To run through this tutorial, you need to fulfill the following prerequisites:
 - Your company is registered as a Seller on the ADAMOS HUB
 - You have an active application subscription with an according
 	- **client ID** - which identifies the application on your ADAMOS HUB tenant
-	- **URL** - which is whitelisted as redirect URL for your application
+	- **URL** - which is whitelisted as redirect URL (for login) and return-to URL (for logout) for your application
 
 > Note: To obtain a tenant on the ADAMOS HUB, you need to <a href="/users/documentation/registration" target="_blank">register on the ADAMOS HUB</a>. In order to become a Seller, you need to <a href="users/documentation/seller-center" target="_blank">apply for a Seller upgrade</a> from within your ADAMOS HUB Control Center. You will receive the client ID and the whitelisting of the redirect URL as soon as you register an application in the ADAMOS HUB and provision it for a subscriber. You can still walk through this tutorial without this information, however, in order to launch the app from ADAMOS HUB myApps you will need the before mentioned information and update your app with it.
 
@@ -27,7 +27,7 @@ Run `npm install` or `yarn install` in order to install the needed dependencies.
 
 ## Run
 
-Run `npm start` or `yarn start` and open [http://localhost:4200](http://localhost:4200) in your browser. If everything is correctly setup you should be redirected to the login page of the ADAMOS HUB IAM Server.
+Run `npm start` or `yarn start` and open [http://localhost:4200](http://localhost:4200){:target="_blank"} in your browser. If everything is correctly setup you should be redirected to the login page of the ADAMOS HUB IAM Server.
 
 ## Build
 
