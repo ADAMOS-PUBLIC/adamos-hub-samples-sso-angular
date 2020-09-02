@@ -1,14 +1,22 @@
 # adamos-hub-samples-sso-angular
 
+This sample app demonstrates how to log in and log out using the ADAMOS HUB IAM Server.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
-## Development server
+## Configuration
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The sample needs to be configured with your client ID in order to work. In the environment file `src/environments/environment.ts` (`src/environments/environment.prod.ts` for production builds) set the client ID of your app in the placeholder `{{CLIENT_ID}}`.
 
-## Code scaffolding
+In order to get a client ID your app has to be registered in the ADAMOS HUB IAM Server.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Install dependencies
+
+Run `npm install` or `yarn install` in order to install the needed dependencies.
+
+## Run
+
+Run `npm start` and open [http://localhost:4200](http://localhost:4200) in your browser. If everything is correctly setup you should be redirected to the login page of the ADAMOS IAM Server.
 
 ## Build
 
@@ -21,7 +29,3 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
