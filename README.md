@@ -1,8 +1,8 @@
 # ADAMOS HUB Single Sign-On (SSO) with Angular
 
-This sample app demonstrates how to log in and out using the ADAMOS HUB IAM Server. It uses the [angular-oauth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc){:target="_blank"} library to handle the Authorization Code flow with PKCE newly defined with [OAuth 2.1](https://oauth.net/2.1/){:target="_blank"}.
+This sample app demonstrates how to log in and out using the ADAMOS HUB IAM Server. It uses the [angular-oauth2-oidc](https://github.com/manfredsteyer/angular-oauth2-oidc) library to handle the Authorization Code flow with PKCE newly defined with [OAuth 2.1](https://oauth.net/2.1/).
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli){:target="_blank"} version 9.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
 ## Prerequisites
 
@@ -27,7 +27,7 @@ Run `npm install` or `yarn install` in order to install the needed dependencies.
 
 ## Run
 
-Run `npm start` or `yarn start` and open [http://localhost:4200](http://localhost:4200){:target="_blank"} in your browser. If everything is correctly setup you should be redirected to the login page of the ADAMOS HUB IAM Server.
+Run `npm start` or `yarn start` and open <a href="http://localhost:4200" target="_blank">http://localhost:4200</a> in your browser. If everything is correctly setup you should be redirected to the login page of the ADAMOS HUB IAM Server.
 
 ## Build
 
