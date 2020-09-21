@@ -27,7 +27,7 @@ Run `npm install` or `yarn install` in order to install the needed dependencies.
 
 ## Run
 
-Run `npm start` or `yarn start` and open <a href="http://localhost:4200" target="_blank">http://localhost:4200</a> in your browser. If everything is correctly setup you should be redirected to the login page of the ADAMOS HUB IAM Server.
+Run `npm start` or `yarn start` and open [http://localhost:4200](http://localhost:4200) in your browser. If everything is correctly setup you should be redirected to the login page of the ADAMOS HUB IAM Server.
 
 ## Build
 
