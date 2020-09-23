@@ -15,7 +15,7 @@ To run through this tutorial, you need to fulfill the following prerequisites:
 	- **client ID** - which identifies the application on your ADAMOS HUB tenant
 	- **URL** - which is whitelisted as redirect URL (for login) and return-to URL (for logout) for your application
 
-> Note: To obtain a tenant on the ADAMOS HUB, you need to <a href="/users/documentation/registration" target="_blank">register on the ADAMOS HUB</a>. In order to become a Seller, you need to <a href="users/documentation/seller-center" target="_blank">apply for a Seller upgrade</a> from within your ADAMOS HUB Control Center. You will receive the client ID and the whitelisting of the redirect URL as soon as you register an application in the ADAMOS HUB and provision it for a subscriber. You can still walk through this tutorial without this information, however, in order to launch the app from ADAMOS HUB myApps you will need the before mentioned information and update your app with it.
+> Note: To obtain a tenant on the ADAMOS HUB, you need to <a href="https://enablement.adamos.com/adamos-id/registrierung" target="_blank">register on the ADAMOS HUB</a>. In order to become a Seller, you need to apply for a Seller upgrade from within your ADAMOS HUB Control Center. You will receive the client ID and the whitelisting of the redirect URL as soon as you register an application in the ADAMOS HUB and provision it for a subscriber. You can still walk through this tutorial without this information, however, in order to launch the app from ADAMOS HUB myApps you will need the before mentioned information and update your app with it.
 
 ## Configuration
 
