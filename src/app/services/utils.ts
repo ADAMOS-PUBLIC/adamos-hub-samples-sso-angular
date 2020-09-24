@@ -1,4 +1,4 @@
-import { CodeResponse } from '../models/codeResponse';
+import { CodeResponse } from '../models/code-response';
 
 /**
  * This class provides some util functions.
