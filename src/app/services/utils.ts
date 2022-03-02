@@ -8,11 +8,19 @@ import { CodeResponse } from '../models/code-response';
  * @export
  */
 export class Utils {
-  static parseQueryString(string): CodeResponse {
+  static parseQueryString(string: string): CodeResponse {
     if(string == "") { return {}; }
-    var segments = string.split("&").map(s => s.split("=") );
-    var queryString = {};
-    segments.forEach(s => queryString[s[0]] = s[1]);
-    return queryString;
+    
+    let segments = string.split("&");
+    let qs = { code: '', error: '' };
+    segments.forEach(segment => {
+      let keyValueArr = segment.split('=')
+      const key = keyValueArr[0]
+      const value = keyValueArr[1]
+      if (key === 'code') qs.code = value
+      if (key === 'error') qs.error = value
+      
+    })
+    return qs;
   }
 }

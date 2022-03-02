@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
+import { Router } from "@angular/router"
 
 @Component({
   selector: 'app-root',
@@ -9,27 +10,25 @@ import { AuthService } from './services/auth.service';
 export class AppComponent implements OnInit {
   title = 'adamos-hub-samples-sso-angular';
 
-  get name() {
-    return this.authService.getName();
-  }
-  get tenant() {
-    return this.authService.getTenant();
-  }
-  get token() {
-    return this.authService.getToken();
-  }
-
-  constructor(private authService: AuthService) { }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
-    this.authService.init();
+    console.log('init App Component')
+    this.authService.configure();
+    
+    if (this.authService.isCallback()) {
+      // do nothing
+    }
+    else if (this.authService.hasValidAccessToken()) {
+      this.router.navigate(['/info'])
+      this.authService.afterLogIn()
+    }
+    else {
+      this.authService.login()
+    }
   }
 
   isLoggedIn(): boolean {
     return this.authService.isLoggedIn();
-  }
-
-  logout() {
-    this.authService.logout();
   }
 }

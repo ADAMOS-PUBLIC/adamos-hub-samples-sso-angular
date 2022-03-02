@@ -1,15 +1,5 @@
-<div *ngIf="isLoggedIn()" style="padding: 30px">
-  <h2>Authorization Code Flow with PKCE!</h2>
-  
-  <p>You successfully logged in using the ADAMOS IAM service.</p>
-  <ul>
-    <li>Tenant ID: <i>{{tenant}}</i></li>
-    <li>Name: <i>{{name}}</i></li>
-    <li>Token: <div style="overflow-wrap: break-word;">{{token}}</div></li>
-  </ul>
-  
-  <button (click)="logout()">Logout</button>
-</div>
+
+<router-outlet></router-outlet>
 
 <div *ngIf="!isLoggedIn()">
   Wait for it...

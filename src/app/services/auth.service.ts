@@ -9,8 +9,8 @@ import { Utils } from './utils';
 export class AuthService {
 
   private _loggedIn = false;
-  private _name: string;
-  private _tenant: string;
+  private _name: string|undefined;
+  private _tenant: string|undefined;
 
   isLoggedIn = () => this._loggedIn;
   getName = () => this._name;
@@ -21,41 +21,24 @@ export class AuthService {
   constructor(private oauthService: OAuthService) { }
 
   /**
-   * init
+   * configure
    */
-  public async init() {
-    try {
-      // Configure 3rd-party library
-      this.oauthService.configure(this.getAuthConfig())
-      await this.oauthService.loadDiscoveryDocument()
+  public async configure() {
+    this.oauthService.configure(this.getAuthConfig())
+    await this.oauthService.loadDiscoveryDocument()
+  }
 
-      // Case 1: Valid access token is available -> user is already logged in
-      // Nothing to do except show the home page of the app
-      if (this.oauthService.hasValidAccessToken()) {
-        this.afterLogIn();
-        return;
-      }
+  public hasValidAccessToken() {
+    return this.oauthService.hasValidAccessToken()
+  }
 
-      // Case 2: The authorization code is available in the hash fragment (normally when the user gets redirected back from the IAM Server).
-      // Try to login with the code from the hash fragment.
-      let qs = Utils.parseQueryString(window.location.search.substring(1))
-      if (qs.code) {
-        await this.oauthService.tryLoginCodeFlow();
+  public isCallback(): boolean {
+    let qs = Utils.parseQueryString(window.location.search.substring(1))
+    return !!qs.code || !!qs.error
+  }
 
-        this.afterLogIn();
-        return;
-      }
-      else if (qs.error) {
-        alert("Error returned from authorization server: "+qs.error);
-        return;
-      }
-
-      // Case 3: Fallback.
-      // Start the code flow.
-      this.oauthService.initCodeFlow();
-    } catch {
-      alert('Login currently not available. Retry later.');
-    }
+  public async tryLoginCodeFlow() {
+    await this.oauthService.tryLoginCodeFlow()
   }
 
   /**
@@ -71,10 +54,10 @@ export class AuthService {
   public async logout() {
     this.oauthService.logOut();
     this._loggedIn = false;
-    this._name = null;
+    this._name = '';
   }
 
-  private afterLogIn() {
+  public afterLogIn() {
     this._loggedIn = true;
     this.loadUser();
   }
@@ -98,7 +81,7 @@ export class AuthService {
       clientId: environment.clientId,
 
       // URL of the SPA to redirect the user to after login
-      redirectUri: window.location.origin,
+      redirectUri: `${window.location.origin}/login/callback`,
 
       responseType: 'code',
 
